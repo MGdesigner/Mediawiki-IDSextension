@@ -11,7 +11,7 @@ class IDS {
 	  $ret .=$input;
 	  $ret .='" src="http://漢字.意傳.台灣/';
 	  $ret .=$input;
-	  $ret .='.png?字體=楷體" width="14" height="14"  />'; 
+	  $ret .='.png?字體=楷體" style="height: 1em; width: 1em"  />'; 
 	  
 
 	  /*
