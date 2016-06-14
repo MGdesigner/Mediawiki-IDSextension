@@ -6,4 +6,4 @@ Add the line :
 require_once( "/var/www/html/mediawiki/extensions/IDS/ids.php" );
 #example
 use tag "ids" in your mediawiki server like:
-<pre><ids>⿺辶⿱⿱穴⿰月⿰⿱⿲長馬長刂心</ids></pre>
+<pre><code><ids>⿺辶⿱⿱穴⿰月⿰⿱⿲長馬長刂心</ids><code></pre>
