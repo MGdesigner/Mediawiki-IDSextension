@@ -1,28 +1,24 @@
 <?php
+/*
+ * Author Shoichi Chou ( shoichi.chou@gmail.com )
+*/
+
+// 0614-2016 change server to https://tools.wmflabs.org/idsgen/
 class IDS {
 	static function onParserInit( Parser $parser ) {
 		$parser->setHook( 'ids', array( __CLASS__, 'idsRender' ) ); 
 		return true;
 	}
 	static function idsRender( $input, array $args, Parser $parser, PPFrame $frame ) {
-
-	  //$ret ='<img alt="⿴辶⿴宀⿱珤⿰隹⿰貝招" src="http://漢字.意傳.台灣/⿰電心.png?字體=楷體" width="16" height="16"  />';
+	  /*
+	  Example:  
+	  $ret ='<img alt="⿰電心" src="https://tools.wmflabs.org/idsgen/⿰電心.png?字體=宋體" width="16" height="16"  />';
+	  */
 	  $ret ='<img  align=middle alt=" ';
 	  $ret .=$input;
-	  $ret .='" src="http://漢字.意傳.台灣/';
+	  $ret .='" src="https://tools.wmflabs.org/idsgen/';
 	  $ret .=$input;
 	  $ret .='.png?字體=宋體" style="height: 1em; width: 1em; vertical-align: middle; margin: 0.4em 0px 0.7em; "  />'; 
-	  
-
-	  /*
-	  $ret ='<svg aria-labelledby="title" role="img">';
-	  $ret .= '<use xlink:href="//漢字.意傳.台灣/';
-	  $ret .=$input;
-	  $ret .='.svg?字體=宋體">';
-	  $ret .='<title>Umbrella</title>';
-	  $ret .='   </use> </svg>'; */
-
-		return $ret;
+	  return $ret;
 	}
 }
-
