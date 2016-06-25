@@ -1,0 +1,4 @@
+{
+	"ids-name": "{{name}}",
+	"ids-description": "{{desc|name=Ideographic Description Sequence|url=https://www.mediawiki.org/wiki/Extension:Ids}}"
+}
