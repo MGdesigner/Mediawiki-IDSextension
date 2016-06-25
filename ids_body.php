@@ -15,11 +15,18 @@ class IDS {
 		 * Example output:
 		 * '<img alt="⿰電心" src="https://tools.wmflabs.org/idsgen/⿰電心.png?字體=宋體" width="16" height="16" />'
 		 */
-		$ret = '<img  align=middle alt="';
-		$ret .= $input;
-		$ret .= '" src="https://tools.wmflabs.org/idsgen/';
-		$ret .= $input;
-		$ret .= '.png?字體=宋體" style="height: 1em; width: 1em; vertical-align: middle; margin: 0.4em 0px 0.7em; "  />';
+		# TODO: The CSS should be moved to a ResourceLoader module.
+		$url = 'https://tools.wmflabs.org/idsgen/'
+			. rawurlencode( $input )
+			. '.png?字體=宋體';
+		$ret = Html::element( 'img',
+			[
+				'align' => 'middle',
+				'alt' => $input,
+				'src' => $url,
+				'style' => 'height: 1em; width: 1em; vertical-align: middle; margin: 0.4em 0px 0.7em;',
+			]
+		);
 		return $ret;
 	}
 }
