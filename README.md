@@ -2,8 +2,9 @@
 A Mediawiki extension : Generate Unicode IDS to a new character image with meta data to resolve Chinese lacking characters.
 
 #install
-Add the line :
-require_once( "/var/www/html/mediawiki/extensions/IDS/ids.php" );
+Add the line:
+	wfLoadExtension( 'Ids' );
+
 #example
 use tag "ids" in your mediawiki server like:
 

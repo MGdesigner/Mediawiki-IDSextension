@@ -1,0 +1,24 @@
+{
+	"name": "Ideographic Description Sequence",
+	"namemsg": "ids-name",
+	"version": "0.1.0",
+	"author": [
+		"MGdesigner (Shoichi Chou)"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:Ids",
+	"descriptionmsg": "ids-desc",
+	"type": "parserhook",
+	"license-name": "GPL-2.0+",
+	"AutoloadClasses": {
+		"IDS": "ids_body.php"
+	},
+	"Hooks": {
+		"ParserFirstCallInit": "IDS::onParserInit"
+	},
+	"MessagesDirs": {
+		"Ids": [
+			"i18n"
+		]
+	},
+	"manifest_version": 1
+}
