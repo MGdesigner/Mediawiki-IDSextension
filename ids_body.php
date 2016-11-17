@@ -23,12 +23,15 @@ class IDS {
 	static function idsRender( $input, array $args, Parser $parser, PPFrame $frame ) {
 		// Support for Simplified "體" (font)
 		$font = isset($args['font']) ? strtr($args['font'] , '体', '體') : '宋體';
-		
-		$ret = '<img align=middle class="ids-char" ';
-		$ret .= 'alt="' . $input . '" ';
-		$ret .= 'src="https://tools.wmflabs.org/idsgen/' . urlencode($input) . '.svg?字體=' . urlencode($font) . '" ';
-		$ret .= 'onerror="this.src = this.src.replace(\'.svg?字體=\', \'.png?字體=\')" '; // png 回退
-		$ret .= 'style="height: 1em; width: 1em; vertical-align: middle; margin: 0.4em 0px 0.7em; " />';
-		return $ret;
+		$src = 'https://tools.wmflabs.org/idsgen/' . rawurlencode($input) . '.svg?字體=' . rawurlencode($font);
+
+		return Html::element('img', [
+			'align' => 'middle',
+			'class' => 'ids-char',  // helps with custom styling
+			'alt' => $input,
+			'src' => $src,
+			'onerror' => 'this.src = this.src.replace(".svg?字體=", ".png?字體=")',  // png fallback
+			'style' => 'height: 1em; width: 1em; vertical-align: middle; margin: 0.4em 0px 0.7em;'
+		]);
 	}
 }
