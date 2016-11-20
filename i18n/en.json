@@ -1,4 +1,4 @@
 {
 	"ids-name": "Ideographic Description Sequence",
-	"ids-description": "Parse Unicode ideographic description characters into a new image to resolve missing Chinese characters."
+	"ids-description": "Build images of unencoded CJK ideographs from Unicode IDCs."
 }

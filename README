@@ -1,8 +1,0 @@
-(UTF-8)
-==install==
-Add the line :
-require_once( "/var/www/html/mediawiki/extensions/IDS/ids.php" );
-
-into LocalSettings.php
-==example==
-<ids>⿺辶⿱⿱穴⿰月⿰⿱⿲長馬長刂心</ids>
